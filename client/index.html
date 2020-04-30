@@ -11,15 +11,18 @@
         Välkommen till <span id="school"></span>!
     </header>
 
-    <form>
+    <form method="POST">
         <svg id="person" viewBox="0 0 312 325" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="156.353" cy="82.3529" r="82.3529" fill="#21DEFF"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M155.784 189C69.7469 189 0 249.683 0 324.539C0 324.693 0.000244141 324.846 0.000854492 325H311.568C311.568 324.846 311.569 324.693 311.569 324.539C311.569 249.683 241.822 189 155.784 189Z" fill="#21DEFF"/>
         </svg>
                      
-        <input type="text" name="user" id="user">
-        <input type="text" name="pass" id="pass">
-        <input type="submit" value="Logga In">
+        <input type="text" name="user" id="user" placeholder="Användarnamn">
+        <input type="password" name="pass" id="pass" placeholder="Lösenord">
+        <input type="submit" value="Logga In" formaction="signin/index.html">
+        <a href="./forgot_pass/index.html" id="forgot">
+            Glömt lösenordet?
+        </a>
     </form>
 
     <script src="./scripts/main.js"></script>

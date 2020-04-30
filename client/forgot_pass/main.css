@@ -14,9 +14,9 @@ body {
     grid-template-areas:    'header' 
                             'form';
     grid-template-columns: auto;
-    grid-template-rows: 20vh 80vh;
     height: 100vh;
     font-size: 14pt;
+    background: var(--primary);
 }
 body > header {
     text-align: center;
@@ -33,33 +33,23 @@ body > form {
     background: #111C;
     border-radius: .3em;
     display: grid;
-    grid-template-areas:    'avatar avatar'
-                            'user user'
-                            'pass pass'
-                            'login forgot';
-    grid-template-rows: auto auto auto auto;
-    grid-template-columns: 35% 65%;
+    grid-template-areas:    'info'
+                            'user'
+                            'send';
+
 }
-body > form > svg {
-    width: auto; height: 14em;
-    margin: 1em auto;
-    grid-area: avatar;
+body > form > p {
+    font-size: 1em;
+    color: white;
+    margin: 1em;
 }
-body > form > svg#person > * {
-    fill: var(--primary);
-}
-body > form > input#user, body > form > input#pass {
+body > form > input#user {
+    grid-area: user;
     padding: .75em;
     margin: .5em 0;
     border: none;
     border-radius: .3em;
     font-size: 1em;
-}
-body > form > input#user {
-    grid-area: user;
-}
-body > form > input#pass {
-    grid-area: pass;
 }
 body > form > input[type=submit] {
     border: none;
@@ -67,9 +57,5 @@ body > form > input[type=submit] {
     font-size: 1em;
     padding: .75em;
     background: var(--primary);
-}
-body > form > a#forgot {
-    grid-area: forgot;
-    margin: auto 1em;
-    color: var(--primary);
+    grid-area: send;
 }
