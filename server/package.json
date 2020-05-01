@@ -1,0 +1,14 @@
+{
+  "name": "schoollabs-server",
+  "version": "1.0.0",
+  "description": "This is the server for schoollabs, it contains all APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BurnyLlama",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
