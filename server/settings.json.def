@@ -1,6 +1,6 @@
 {
     "database" : {
-        "host" : "78.72.169.7",
+        "host" : "localhost",
         "user" : "schoollabs",
         "pass" : "schoollabs"
     }
