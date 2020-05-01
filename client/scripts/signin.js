@@ -16,5 +16,5 @@ form.addEventListener('submit', (event) => {
     const user = login.get('user');
     const pass = login.get('pass');
     msgbox.style.display = 'block';
-    msgbox.innerHTML += "<p>Loggar in som " + user;
+    msgbox.innerHTML += `<p>Loggar in som ${user}</p>`;
 });
