@@ -31,5 +31,4 @@ document.documentElement.style.setProperty("--primary", settings.prim_color)
 // Set the school name in the header.
 document.querySelector("#school").innerHTML = settings.school_name;
 
-
 }

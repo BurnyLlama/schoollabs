@@ -27,7 +27,7 @@ body > header {
 body > form {
     grid-area: form;
     margin: 0 auto;
-    padding: 2em 5em;
+    padding: 2em 5%;
     width: 30vw;
     height: fit-content;
     background: #111C;
@@ -56,6 +56,8 @@ body > form > input[type=submit] {
     border-radius: .3em;
     font-size: 1em;
     padding: .75em;
+    margin: .5em 3em;
     background: var(--primary);
     grid-area: send;
+    cursor: pointer;
 }

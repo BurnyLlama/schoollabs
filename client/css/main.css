@@ -2,7 +2,7 @@
 * {
     margin: 0; padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans', 'Helvetica', 'sans', 'sans-serif';
+    font-family: 'Noto Sans', 'Roboto', 'Helvetica', 'sans', 'sans-serif';
 }
 /* Variables */
 :root {
@@ -23,11 +23,12 @@ body > header {
     grid-area: header;
     margin: auto;
     font-size: 2.5em;
+    font-weight: bold;
 }
 body > form {
     grid-area: form;
     margin: 0 auto;
-    padding: 2em 5em;
+    padding: 2em 5%;
     width: 30vw;
     height: fit-content;
     background: #111C;
@@ -61,12 +62,14 @@ body > form > input#user {
 body > form > input#pass {
     grid-area: pass;
 }
-body > form > input[type=submit] {
+body > form > button#login-btn {
     border: none;
     border-radius: .3em;
     font-size: 1em;
     padding: .75em;
+    margin: .5em 0;
     background: var(--primary);
+    cursor: pointer;
 }
 body > form > a#forgot {
     grid-area: forgot;
