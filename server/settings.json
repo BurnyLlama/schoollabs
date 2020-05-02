@@ -1,7 +1,5 @@
 {
     "database" : {
-        "host" : "78.72.169.7",
-        "user" : "schoollabs",
-        "pass" : "schoollabs"
+        "connectCommand" : "schoollabs:schoollabs@78.72.169.7/scoollabs"
     }
 }

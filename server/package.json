@@ -9,7 +9,8 @@
   "author": "BurnyLlama",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "mysql": "^2.18.1"
+    "monk": "^7.2.0"
   }
 }

@@ -1,22 +1,20 @@
 console.log('Startar servern...');
 // Import packages
-const mysql = require('mysql');
 const fs = require('fs');
-
+const express = require('express');
+let app = express();
 
 console.log('Läser in inställningar...');
-
 const settings_file = fs.readFileSync('settings.json');
 let settings = JSON.parse(settings_file);
 
-const db = mysql.createConnection({
-    host: settings.database.host,
-    user: settings.database.user,
-    password: settings.database.pass
-});
+console.log('Kontaktar databasen...');
+const db = require('monk')(settings.database.connectCommand);
 
-console.log('Kontaktar MySQL-servern (databas-servern)...');
-db.connect(function(err) {
-    if (err) throw err;
-    console.log('Anslutning till databasen är fullbordad.');
+console.log('Startar upp SchoolLabs servern...');
+app.listen(5555, () => {
+    console.log(`Startat servern på port 5555`)
+    app.get("/", (req, res, next) => {
+        res.json(["Tony","Lisa","Michael","Ginger","Food"]);
+    });
 });
