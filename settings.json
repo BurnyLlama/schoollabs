@@ -1,5 +1,5 @@
 {
     "database" : {
-        "connectCommand" : "schoollabs:schoollabs@localhost/scoollabs"
+        "connectCommand" : "schoollabs:schoollabs@78.72.169.7/scoollabs"
     }
 }
