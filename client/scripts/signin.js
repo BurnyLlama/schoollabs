@@ -3,7 +3,7 @@ const form = document.querySelector("form#login-form");
 // Get the msgbox.
 const msgbox = document.querySelector(".msg-box");
 // Get the API...
-const API = 0;
+const API = "localhost:5555/api";
 
 
 // Here we define what happens when 'submit' is triggered,

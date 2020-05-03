@@ -14,7 +14,7 @@ const db = require('monk')(settings.database.connectCommand);
 console.log('Startar upp SchoolLabs servern...');
 app.listen(5555, () => {
     console.log(`Startat servern på port 5555`)
-    app.get("/", (req, res, next) => {
-        res.json(["Tony","Lisa","Michael","Ginger","Food"]);
+    app.get("/api", (req, res, next) => {
+        console.log('Inkommande anslutning!')
     });
 });
