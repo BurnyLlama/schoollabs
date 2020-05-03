@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="phone.css">
     <title>Glömt Lösenord</title>
 </head>
 <body>
@@ -11,13 +12,19 @@
         Återställ lösenord.
     </header>
 
-    <form action="" method="post">
+    <form id="forgot-form" method="POST">
         <p>
             Vi skickar ett mejl till dig med en länk för att återställa ditt lösenord.
         </p>
         <input type="text" name="user" id="user" placeholder="Användarnamn">
         <input type="submit" value="Skicka!">
     </form>
+
+    <div class="msg-box" style="display: none; position: absolute; left: 0; width: 100vw; height: auto; background-color: aliceblue;">
+
+    </div>
+
     <script src="main.js"></script>
+    <script src="forgot.js"></script>
 </body>
 </html>

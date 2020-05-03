@@ -16,8 +16,46 @@ body {
     grid-template-columns: auto;
     grid-template-rows: 20vh 80vh;
     height: 100vh;
-    font-size: 14pt;
 }
+
+/* So that text scales a little...*/
+@media screen and (max-width: 850px) {
+    body {
+        font-size: 10pt;
+    }
+}
+@media screen and (min-width: 1000px) {
+    body {
+        font-size: 11pt;
+    }
+}
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 12pt;
+    }
+}
+@media screen and (min-width: 1500px) {
+    body {
+        font-size: 13pt;
+    }
+}
+@media screen and (min-width: 1800px) {
+    body {
+        font-size: 14pt;
+    }
+}
+@media screen and (min-width: 2500px) {
+    body {
+        font-size: 15pt;
+    }
+}
+@media screen and (min-width: 3000) {
+    body {
+        font-size: 16pt;
+    }
+}
+/* Looks much... Ugh... */
+
 body > header {
     text-align: center;
     grid-area: header;
@@ -42,7 +80,8 @@ body > form {
     grid-template-columns: 35% 65%;
 }
 body > form > svg {
-    width: auto; height: 14em;
+    width: 100%; height: auto;
+    max-width: 12em;
     margin: 1em auto;
     grid-area: avatar;
 }

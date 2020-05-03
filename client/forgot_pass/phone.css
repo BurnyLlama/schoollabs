@@ -1,0 +1,10 @@
+@media screen and (max-width: 800px) {
+body {
+    font-size: 18pt;
+    grid-template-rows: 45vh 55vh;
+}
+body > form {
+    width: 90vw;
+    margin: auto;
+}
+}

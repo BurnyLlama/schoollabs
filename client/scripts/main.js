@@ -5,10 +5,6 @@ let settings;
     settings = await settings_request.json();
     console.log('Fetched settings.json!');
 
-    /*
-        More JSON files would go here...
-    */
-
     // Run the main function (when done).
     main ()
 })();
@@ -32,3 +28,10 @@ document.documentElement.style.setProperty("--primary", settings.prim_color)
 document.querySelector("#school").innerHTML = settings.school_name;
 
 }
+
+// TEST
+(async () => {
+    const con = await fetch('/api');
+    const API = await con.json();
+    console.log(API.msg);
+})();
