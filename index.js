@@ -14,6 +14,8 @@ let settings = JSON.parse(settings_file);
 
 console.log('Kontaktar databasen...');
 const db = require('monk')(settings.database.connectCommand);
+const users = db.get('users');
+console.log(users.find());
 
 console.log('Laddar in filer...');
 app.use(express.static('client'));
