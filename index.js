@@ -12,11 +12,20 @@ console.log('Läser in inställningar...');
 const settings_file = fs.readFileSync('settings.json');
 let settings = JSON.parse(settings_file);
 
+// Database connection
 console.log('Kontaktar databasen...');
-const db = require('monk')(settings.database.connectCommand);
+const db = require('monk')(settings.database.uri);
+db.then(() => {
+    console.log('Databasen är kontaktad!')
+});
 const users = db.get('users');
-console.log(users.find());
+users.insert([{user: 'elev'}, {user: 'admin'}])
+    .then((docs) => {
+    }).catch((err) => {
+        console.log('failed')
+    }).then(() => db.close());
 
+// Making sure that /client can be served as /
 console.log('Laddar in filer...');
 app.use(express.static('client'));
 
@@ -29,6 +38,7 @@ app.use(session({
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 
+// Start the actual server at port 5555 (for some reason)...
 app.listen(5555, () => {
     console.log(`Startat servern på port 5555`);
 

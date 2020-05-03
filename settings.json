@@ -1,5 +1,5 @@
 {
     "database" : {
-        "connectCommand" : "schoollabs:schoollabs@78.72.169.7/scoollabs"
+        "uri" : "schoollabs:schoollabs@192.168.1.157/schoollabs"
     }
 }
