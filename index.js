@@ -1,79 +1,55 @@
+// Inform the user that they are launching the server.
 console.log('Startar upp SchoolLabs servern...');
+
 // Import packages
-const fs = require('fs');
+// Dotenv - Create a file called .env and fill it wit all environment variables...
+const dotenv = require('dotenv');
+dotenv.config();
+
+// Express
 const express = require('express');
+let app = express();
 const session = require('express-session');
 const bodyParser = require('body-parser');
 
-let app = express();
+// Database
+const mongooose = require('mongoose');
 
-// Some settings should be changeable, those will be in /settings.js
-console.log('Läser in inställningar...');
-const settings_file = fs.readFileSync('settings.json');
-let settings = JSON.parse(settings_file);
 
-// Database connection
-console.log('Kontaktar databasen...');
-const db = require('monk')(settings.database.uri);
-db.then(() => {
-    console.log('Databasen är kontaktad!')
-});
-const users = db.get('users');
-users.insert([{user: 'elev'}, {user: 'admin'}])
-    .then((docs) => {
-    }).catch((err) => {
-        console.log('failed')
-    }).then(() => db.close());
+// Connect to db
+console.log('Kontaktar databasen...')
+mongooose.connect(
+    process.env.DB_URI, // Put this variable in .env ; should look something like this: "DB_URI = mongdb://user:password@domaim_or_IP:port/database"
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    () => console.log('Databasen är ansluten!')
+);
 
-// Making sure that /client can be served as /
-console.log('Laddar in filer...');
-app.use(express.static('client'));
-
-// Set up somethings needed by the server.
+// Set up some middleware...
 app.use(session({
     secret: 'secret',
     resave: true,
     saveUninitialized: true
 }));
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 
-// Start the actual server at port 5555 (for some reason)...
-app.listen(5555, () => {
-    console.log(`Startat servern på port 5555`);
+// Making sure that /client can be served as /
+console.log('Laddar in filer...');
+app.use(express.static('client'));
 
-    // Defines what happens on /api, puts to console and sends back feedback.
-    app.get("/api", (req, res, next) => {
-        console.log('Inkommande anslutning!');
-        res.send('{"msg" : "Ansluten till API!"}')
-    });
 
-    // When someone wants to login.
-    app.post('/auth', (req, res, next) => {
-        let user = req.body.user;
-        let pass = req.body.pass;
-        console.log(`Inkommande förfrågan om att logga in som ${user}.`);
+// Import Routes
+const authRoute = require('./routes/auth');
+app.use('/api/auth', authRoute);
 
-        req.session.loggedin = true;
-        req.session.user = user;
 
-        res.redirect('/hub');
-        res.end();
-    });
-
-    // When someone wants to change password.
-    app.post('/auth_forgot', (req, res, next) => {
-        let user = req.body.user;
-        console.log(`Inkommande förfrågan om att byta lösenord på ${user}.`);
-    });
-
-    // When the client checks if you should be at /hub
-    app.get('/auth_hub', (req, res, next) => {
-        if (req.session.loggedin) {
-            res.send(`{"msg" : "Välkommen ${req.session.user}"}`);
-        } else {
-            res.send('{"msg" : "Vänligen logga in!"}');
-        };
-        res.end();
-    });
+// Defines what happens on /api, puts to console and sends back feedback.
+app.get("/api", (req, res, next) => {
+    console.log('Inkommande anslutning!');
+    res.send('{"msg" : "Ansluten till API!"}')
 });
+
+
+// Start the actual server at port 5555 (for some reason)...
+app.listen(5555, () => console.log(`Startat servern på port 5555`));

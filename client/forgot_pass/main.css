@@ -102,3 +102,16 @@ body > form > input[type=submit] {
     grid-area: send;
     cursor: pointer;
 }
+body > div.check {
+    position: absolute;
+    width: 30vw;
+    left: 35vw;
+    color: white;
+    background: #111C;
+    border-radius: .3em;
+    padding: 2em;
+    margin-top: 40vh;
+}
+body > div.check > p {
+    font-size: 1em;
+}

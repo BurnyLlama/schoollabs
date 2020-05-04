@@ -7,4 +7,10 @@ body > form {
     width: 90vw;
     margin: auto;
 }
+body > div.check {
+    position: absolute;
+    width: 90vw;
+    left: 5vw;
+    margin-top: 40vh;
+}
 }

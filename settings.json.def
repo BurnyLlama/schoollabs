@@ -1,7 +1,0 @@
-{
-    "database" : {
-        "host" : "localhost",
-        "user" : "schoollabs",
-        "pass" : "schoollabs"
-    }
-}
