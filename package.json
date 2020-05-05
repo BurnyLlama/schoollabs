@@ -9,6 +9,7 @@
   "author": "BurnyLlama",
   "license": "MIT",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",

@@ -26,7 +26,7 @@ mongooose.connect(
 
 // Set up some middleware...
 app.use(session({
-    secret: 'secret',
+    secret: process.env.APP_SECRET,
     resave: true,
     saveUninitialized: true
 }));

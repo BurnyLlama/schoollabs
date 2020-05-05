@@ -1,26 +1,40 @@
 const router = require('express').Router();
 const User = require('../models/User');
+const validate = require('../validate');
 
 // For admins to add users
 router.post('/register', async (req, res) => {
+    // Validate input with Joi
+        // TODO
+    
+    // Check if that username exists
+        // TODO
+    
+    // Construct new user
     const user = new User({
         name: req.body.name,
         pass: req.body.pass,
         title: req.body.title,
         email: req.body.email
     });
+    // Create new user, return error on bad request.
     try {
         console.log('Försöker registrera en ny anändare...')
         const savedUser = await user.save();
         console.log(`Registrerade ${savedUser}`);
         res.send(savedUser);
-    }catch(err){
+    } catch(err) {
         res.status(400).send(err);
-    };
+    }; 
 });
 
 // When someone wants to login.
-router.post('/login', (req, res, next) => {
+router.post('/login', async (req, res, next) => {
+
+    // Validation
+    const {error} = validate.login(req.body)
+    if (error) return res.status(400).send(error.details[0].message);
+
     let user = req.body.user;
     let pass = req.body.pass;
     console.log(`Inkommande förfrågan om att logga in som ${user}.`);
