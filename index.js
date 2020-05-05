@@ -38,17 +38,20 @@ app.use(bodyParser.json())
 console.log('Laddar in filer...');
 app.use(express.static('client'));
 
-
-// Import Routes
-const authRoute = require('./routes/auth');
-app.use('/api/auth', authRoute);
-
-
+/*
+    The following 2 sections sets up the API calls.
+*/
 // Defines what happens on /api, puts to console and sends back feedback.
 app.get("/api", (req, res, next) => {
     console.log('Inkommande anslutning!');
     res.send('{"msg" : "Ansluten till API!"}')
 });
+
+// Import API Routes
+const authRoute = require('./routes/auth');
+app.use('/api/auth', authRoute);
+const fetchRoute = require('./routes/fetch');
+app.use('/api/fetch', fetchRoute);
 
 
 // Start the actual server at port 5555 (for some reason)...
