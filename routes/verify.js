@@ -1,12 +1,15 @@
 const jwt = require('jsonwebtoken');
 
-module.exports = function (req, res, next) {
-    const token = req.header.api-token;
-    if (!token) res.status(401).send({ err: 'Du behöver API-token.'});
+module.exports.verify = (token) => {
+    console.log('Ny anslutning...')
+    if (!token) {
+        console.log('Ingen token.')
+        return false;
+    }
     try {
-        const verified = jwt.verify(token, process.env.TOKEN_SECRET);
-        req.user = verified;
+        const verification = jwt.verify(token, process.env.TOKEN_SECRET);
+        return verification._id;
     } catch(err) {
-        res.status(400).send({ err: 'Felaktig API-token' })
+        return false;
     }
 };

@@ -53,12 +53,11 @@ router.post('/login', async (req, res) => {
         // If a match
         if (match) {
             // Create and send a token
-            const token = jwt.sign({ _id: userFromDB._id }, process.env.TOKEN_SECRET); // Put the TOKEN_SECRET varaible in '.env', ex: TOKEN_SECRET = supersecret
-            res.header('api-token', token).send(token);
+            const token = jwt.sign({ _id: userFromDB._id }, process.env.TOKEN_SECRET, {expiresIn: '3600s'}); // Put the TOKEN_SECRET varaible in '.env', ex: TOKEN_SECRET = supersecret
+            console.log(token)
 
-            // Session variables
-            req.session.loggedin = true;
-            req.session.user = req.body.user;
+            // Send back a cookie (Yummy!) expires after a little more than 60 minutes.
+            res.cookie('token', token, {expires: new Date(Date.now() + 4000000)});
 
             // Redirect to the hub (main area)...
             res.redirect('/hub');

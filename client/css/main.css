@@ -115,3 +115,12 @@ body > form > a#forgot {
     margin: auto 1em;
     color: var(--primary);
 }
+body > form > p#cookies {
+    color: white;
+    background: #222C;
+    padding: .5em;
+    border-radius: .3em;
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+}

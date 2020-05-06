@@ -9,8 +9,8 @@ dotenv.config();
 // Express
 const express = require('express');
 let app = express();
-const session = require('express-session');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 // Database
 const mongooose = require('mongoose');
@@ -24,15 +24,9 @@ mongooose.connect(
     () => console.log('Databasen är ansluten!')
 );
 
-// Set up some middleware...
-app.use(session({
-    secret: process.env.APP_SECRET,
-    resave: true,
-    saveUninitialized: true
-}));
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
+app.use(cookieParser())
 
 // Making sure that /client can be served as /
 console.log('Laddar in filer...');
@@ -52,7 +46,9 @@ const authRoute = require('./routes/auth');
 app.use('/api/auth', authRoute);
 const fetchRoute = require('./routes/fetch');
 app.use('/api/fetch', fetchRoute);
+const userRoute = require('./routes/user');
+app.use('/api/user', userRoute)
 
 
 // Start the actual server at port 5555 (for some reason)...
-app.listen(5555, () => console.log(`Startat servern på port 5555`));
+app.listen(80, () => console.log(`Startat servern på port 5555`));
