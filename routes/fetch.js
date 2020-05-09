@@ -4,7 +4,7 @@ const User = require('../models/User');
 
 router.get('/user', async (req,res) => {
     const uid = token.verify(req.cookies.token);
-    if (!uid) res.status(403).send('{ "err": "Inte tillåtet! Se till att ha en duglig API-token." }');
+    if (!uid) return res.status(403).send('{ "err": "Inte tillåtet! Se till att ha en duglig API-token." }');
     console.log(uid)
     const user = await User.findOne({ _id: uid });
     const userInfo = {

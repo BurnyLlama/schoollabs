@@ -148,6 +148,7 @@ body > div#settings-container {
     grid-template-columns: 1fr 3em;
     grid-template-rows: 3em 1fr;
     border-radius: .3em;
+    box-shadow: 0 0 1em var(--trans);
 }
 #settings-container > h1 {
     grid-area: heading;

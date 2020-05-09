@@ -1,3 +1,6 @@
+// Global variables
+const container = document.querySelector('main#container');
+
 // Construct the basic place and add some CSS-Variables.
 function construct() {
     // Set the first name of the user to the avatar "image"
@@ -27,24 +30,47 @@ function construct() {
         root.setProperty("--mg-clr", "#888888");
         root.setProperty("--mfg-clr", "#eeeeee"); 
         root.setProperty("--fg-clr", "#ffffff");
-        root.setProperty("--trans", "#fff8");
+        root.setProperty("--trans", "#8884");
         document.querySelector('#settings-button').style.filter = "invert(100%)";
         document.querySelector('.cross').style.filter = "invert(100%)";
     };
-    constructHome();
+    return constructHome();
 };
 
 function constructHome() {
-    const container = document.querySelector('main#container');
     container.className = "home";
-    container.innerHTML = '\
-    <section class="Nyheter" id="news"></section>\
-    <section class="Viktigt" id="important"></section>\
-    <section class="Meddelanden" id="messages"></section>\
-    ';
+    container.innerHTML = `
+    <section class="Snabbgenvägar" id="quick-space"></section>
+    <section class="Viktigt" id="important"></section>
+    <section class="Meddelanden" id="messages"></section>
+    `;
+
     const sections = container.querySelectorAll('section');
     sections.forEach((section) => {
         section.innerHTML = `<h1>${section.className}</h1>`;
         section.innerHTML += '<div id="content"></div>';
     });
+
+    const quickSpaceContainer = container.querySelector('#quick-space > #content');
+    quickSpaceContainer.innerHTML = `
+    <h2>Ändra Lösenord</h2>
+    <form method="POST" action="/api/admin/changePass">
+    <input type="text" id="user" name="user" placeholder="Användarnamn">
+    <input type="password" id="pass" name="pass" placeholder="Lösenord">
+    <input type="submit" value="Byt Lösenord">
+    </form>
+    `;
+
+    const messagesContainer = container.querySelector('#quick-space > #content')
+    
 };
+function constructProfile() {
+    container.className = "profile";
+    container.innerHTML = `
+    <div id="user-info">
+        <p>Användarnamn: ${user.name}</p>
+        <p>Epost: ${user.email}</p>
+        <p>Titel: ${user.title}</p>
+    </div>
+    `;
+}

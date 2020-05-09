@@ -1,8 +1,12 @@
+@font-face {
+    src: url('../fonts/Lato-Regular.ttf');
+    font-family: 'Lato';
+}
 /* REMOVE PESKY MARGINS! */
 * {
     margin: 0; padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans', 'Roboto', 'Helvetica', 'sans', 'sans-serif';
+    font-family: 'Lato', 'Noto Sans', 'Roboto', 'Helvetica', 'sans', 'sans-serif';
 }
 /* Variables */
 :root {

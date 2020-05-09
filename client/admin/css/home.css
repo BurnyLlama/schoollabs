@@ -1,0 +1,81 @@
+:root {
+    --bg-clr: #fff;
+    --mbg-clr: #eee;
+    --mg-clr: #888;
+    --mfg-clr: #111;
+    --fg-clr: #000;
+    --primary: #21DEFF;
+}
+main.home {
+    display: grid;
+    grid-template-areas: 'news important messages';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+main.home > section {
+    background: var(--mbg-clr);
+    border-radius: .3em; 
+    padding: 1em; 
+    display: grid;
+    grid-template-areas: 'heading' 'content';
+    grid-template-rows: auto 1fr;
+}
+main.home > section {
+    grid-area: news;
+    margin: 1em 1em 1em 2em;
+
+}
+main.home > section > div#content {
+    border-radius: .3em;
+}
+main.home > section > div#content > h2 {
+    font-size: 1.25em;
+    margin: .5em .5em 0 .5em;
+    padding: .5em;
+    color: var(--bg-clr);
+    background: var(--primary);
+    border-top-left-radius: .3em;
+    border-top-right-radius: .3em;
+}
+main.home > section > div#content > form {
+    margin: 0 .625em .625em .625em;
+    padding: .5em;
+    background: var(--mbg-clr);
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom-left-radius: .3em;
+    border-bottom-right-radius: .3em;
+}
+main.home > section > div#content > form > input {
+    margin: .5em;
+    padding: .5em 1em;
+    color: var(--fg-clr);
+    background: var(--bg-clr);
+    border: none;
+    border-radius: .3em;
+    width: 100%;
+    font-size: 1em;
+}
+main.home > section > div#content > form > input[type=submit] {
+    margin: .5em;
+    color: var(--bg-clr);
+    background: var(--primary);
+}
+main.home > section#important {
+    grid-area: important;
+    margin: 1em 1em 1em 1em;
+}
+main.home > section#messages {
+    grid-area: messages;
+    margin: 1em 2em 1em 1em;
+}
+main.home > section > h1 {
+    margin: 0 0 .5em 1em;
+    font-size: 1.5em;
+    grid-area: heading;
+}
+main.home > section > div#content {
+    grid-area: content;
+    background: var(--bg-clr);
+    height: 1fr;
+}

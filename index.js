@@ -48,6 +48,8 @@ const fetchRoute = require('./routes/fetch');
 app.use('/api/fetch', fetchRoute);
 const userRoute = require('./routes/user');
 app.use('/api/user', userRoute)
+const adminRoute = require('./routes/admin');
+app.use('/api/admin', adminRoute)
 
 
 // Start the actual server at port 5555 (for some reason)...

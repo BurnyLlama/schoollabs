@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" type="text/css" href="./css/home.css">
-    <link rel="stylesheet" type="text/css" href="./css/subject.css">
-    <title>Hub</title>
+    <link rel="stylesheet" type="text/css" href="./css/profile.css">
+    <title>Admin</title>
 </head>
 <body>
     <nav id="menubar">
@@ -16,20 +16,11 @@
             </div>
         </div>
         <div id="menu-items">
-            <p id="home-btn">Hem</p>
-            <div id="subject-btn">
-                Ämnen ↴
-                <div id="subject-entries">
-                    da
-                    <br>
-                    da 
-                    <br>
-                    da
-                </div>
-            </div>
+            <p id="home-btn" onclick="constructHome()">Hem</p>
             <p id="schedules-btn">Scheman</p>
-            <p id="schedules-btn">Kalender</p>
-            <p id="schedules-btn">Profil</p>
+            <p id="calendar-btn">Kalender</p>
+            <p id="users-btn">Användare</p>
+            <p id="profile-btn" onclick="constructProfile()">Profil</p>
         </div>
         <div id="settings">
             <img id="settings-button" src="./images/settings.svg" onclick="showSettings()">
@@ -63,7 +54,6 @@
     </div>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/construct.js"></script>
-    <script src="./scripts/menus.js"></script>
     <script src="./scripts/settings.js"></script>
 </body>
 </html>

@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
         } catch(err) {
             res.status(400).send(err);
         }; 
-    })
+    });
 });
 
 // When someone wants to login.
@@ -60,7 +60,8 @@ router.post('/login', async (req, res) => {
             res.cookie('token', token, {expires: new Date(Date.now() + 4000000)});
 
             // Redirect to the hub (main area)...
-            res.redirect('/hub');
+            if (userFromDB.title == "admin") return res.redirect('/admin');
+            if (userFromDB.title == "student") res.redirect('/hub');
             res.end();
         } else {
             res.status(403).send({ err: 'Fel lösenord!' });

@@ -32,6 +32,18 @@ const register = (data) => {
     return schema.validate(data);
 };
 
+const changePassAdmin = (data) => {
+    const schema = Joi.object({
+        user: Joi.string()
+            .min(2)
+            .required(),
+        pass: Joi.string()
+            .min(1)
+            .required()
+    });
+    return schema.validate(data)
+};
 
 module.exports.login = login;
 module.exports.register = register;
+module.exports.changePassAdmin = changePassAdmin;
