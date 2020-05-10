@@ -41,7 +41,7 @@ function constructHome() {
     container.className = "home";
     container.innerHTML = `
     <section class="Snabbgenvägar" id="quick-space"></section>
-    <section class="Viktigt" id="important"></section>
+    <section class="Nyheter och Information" id="news"></section>
     <section class="Meddelanden" id="messages"></section>
     `;
 
@@ -54,14 +54,33 @@ function constructHome() {
     const quickSpaceContainer = container.querySelector('#quick-space > #content');
     quickSpaceContainer.innerHTML = `
     <h2>Ändra Lösenord</h2>
-    <form method="POST" action="/api/admin/changePass">
-    <input type="text" id="user" name="user" placeholder="Användarnamn">
-    <input type="password" id="pass" name="pass" placeholder="Lösenord">
-    <input type="submit" value="Byt Lösenord">
+        <form method="POST" action="/api/admin/changePass">
+        <input type="text" id="user" name="user" placeholder="Användarnamn">
+        <input type="password" id="pass" name="pass" placeholder="Lösenord">
+        <input type="submit" value="Byt Lösenord">
+    </form>
+    <h2>Skapa Användare</h2>
+    <form method="POST" action="/api/auth/register">
+        <input type="text" id="name" name="name" placeholder="Användarnamn">
+        <input type="password" id="pass" name="pass" placeholder="Lösenord">
+        <input type="text" id="title" name="title" placeholder="Titel">
+        <p>Titeln kan vara en av följande: student, guardian, teacher, admin</p>
+        <input type="text" id="email" name="email" placeholder="epost@domän.se">
+        <input type="submit" value="Skapa användare!">
     </form>
     `;
 
-    const messagesContainer = container.querySelector('#quick-space > #content')
+    const newsContainer = container.querySelector('#news > #content');
+    newsContainer.innerHTML = `
+    <h2>Skicka ut en Nyhet/Information!</h2>
+    <form method="POST" action="/api/news/create">
+        <input type="text" id="title" name="title" placeholder="Rubrik">
+        <textarea name="content" placeholder="Skriv nyheten/informationen här."></textarea>
+        <input type="submit" value="Skicka ut!">
+    </form>
+    `;
+
+    const messagesContainer = container.querySelector('#quick-space > #content');
     
 };
 function constructProfile() {

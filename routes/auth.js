@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const User = require('../models/User');
 const validate = require('../validate');
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt');
+const token = require('./verify');
+const jwt = require('jsonwebtoken');
 
 // For admins to add users
 router.post('/register', async (req, res) => {
@@ -10,9 +11,18 @@ router.post('/register', async (req, res) => {
     let {error} = validate.register(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
+    // Verify the API-token
+    const uid = token.verify(req.cookies.token);
+    if (!uid) return res.status(403).send('{ "err": "Inte tillåtet! Se till att ha en duglig API-token." }');
+
+    // Check if the user who executes the command really is an admin
+    await User.findOne({ _id: uid }, (err, user) => {
+        if (user.title != "admin") return res.status(403).send('Du är inte en admin!')
+    });
+
     // Check if that username exists
-    const userCheck = await User.findOne({ user: req.body.name });
-    if (userCheck) return res.status(400).send('That user already exists!');
+    const userCheck = await User.findOne({ name: req.body.name });
+    if (userCheck) return res.status(400).send('Den användaren finns redan!');
     
     // Hash password (Security 101)
     bcrypt.hash(req.body.pass, 10, async (err, passHash) => {

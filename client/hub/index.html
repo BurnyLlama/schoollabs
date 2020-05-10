@@ -16,7 +16,7 @@
             </div>
         </div>
         <div id="menu-items">
-            <p id="home-btn">Hem</p>
+            <p id="home-btn" onclick="constructHome()">Hem</p>
             <div id="subject-btn">
                 Ämnen ↴
                 <div id="subject-entries">
@@ -29,7 +29,7 @@
             </div>
             <p id="schedules-btn">Scheman</p>
             <p id="schedules-btn">Kalender</p>
-            <p id="schedules-btn">Profil</p>
+            <p id="schedules-btn" onclick="constructProfile()">Profil</p>
         </div>
         <div id="settings">
             <img id="settings-button" src="./images/settings.svg" onclick="showSettings()">
@@ -65,5 +65,6 @@
     <script src="./scripts/construct.js"></script>
     <script src="./scripts/menus.js"></script>
     <script src="./scripts/settings.js"></script>
+    <script src="./scripts/news.js"></script>
 </body>
 </html>

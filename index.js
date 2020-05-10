@@ -50,7 +50,8 @@ const userRoute = require('./routes/user');
 app.use('/api/user', userRoute)
 const adminRoute = require('./routes/admin');
 app.use('/api/admin', adminRoute)
-
+const newsRoute = require('./routes/news');
+app.use('/api/news', newsRoute)
 
 // Start the actual server at port 5555 (for some reason)...
-app.listen(80, () => console.log(`Startat servern på port 5555`));
+app.listen(5555, () => console.log(`Startat servern på port 5555`));

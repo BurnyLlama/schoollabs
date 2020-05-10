@@ -14,9 +14,10 @@ router.post('/changePass', async (req, res) => {
     if (!uid) return res.status(403).send('{ "err": "Inte tillåtet! Se till att ha en duglig API-token." }');
 
     // Check if the user who executes the command really is an admin
-    const adminCheck = User.findOne({ _id: uid })
-    if (!adminCheck) return res.status(403).send('Du är inte en admin!')
-    
+    await User.findOne({ _id: uid }, (err, user) => {
+        if (user.title != "admin") return res.status(403).send('Du är inte en admin!')
+    });
+
     // Check if the user exists
     let user = User.findOne({ name: req.body.user });
     if (!user) return res.status(400).send('Den användaren finns inte!');
@@ -28,7 +29,7 @@ router.post('/changePass', async (req, res) => {
             // Set the pass to the new hash
             console.log('Byter lösenord på en användare...')
             await user.updateOne({ pass: passHash});
-            console.log(`Bytte lösenord ${req.body.user}`);
+            console.log(`Bytte lösenord på ${req.body.user}`);
             return res.send('Ok!');
         } catch(err) {
             return res.status(400).send(err);

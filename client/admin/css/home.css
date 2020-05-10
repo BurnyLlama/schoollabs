@@ -46,7 +46,7 @@ main.home > section > div#content > form {
     border-bottom-left-radius: .3em;
     border-bottom-right-radius: .3em;
 }
-main.home > section > div#content > form > input {
+main.home > section > div#content > form > input, main.home > section > div#content > form > textarea {
     margin: .5em;
     padding: .5em 1em;
     color: var(--fg-clr);
@@ -55,13 +55,32 @@ main.home > section > div#content > form > input {
     border-radius: .3em;
     width: 100%;
     font-size: 1em;
+    transition: .3s;
+    resize: vertical;
+}
+main.home > section > div#content > form > textarea {
+    height: 6em;
+}
+main.home > section > div#content > form> input::placeholder {
+    color: var(--mg-clr);
 }
 main.home > section > div#content > form > input[type=submit] {
     margin: .5em;
     color: var(--bg-clr);
     background: var(--primary);
+    border: none;
 }
-main.home > section#important {
+main.home > section > div#content > form > input[type=submit]:hover {
+    border-radius: .3em;
+    filter: brightness(1.2);
+    border-radius: .5em;
+    transition: .3s;
+    cursor: pointer;
+}
+main.home > section > div#content > form > p {
+    margin: .5em;
+}
+main.home > section#news {
     grid-area: important;
     margin: 1em 1em 1em 1em;
 }
