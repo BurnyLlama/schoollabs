@@ -1,0 +1,14 @@
+#subject-btn > #subject-entries {
+    display: none;
+    position: absolute;
+    background: var(--trans);
+    width: auto;
+    margin-top: .4em;
+    padding: 1em;
+    border-bottom-left-radius: .3em;
+    border-bottom-right-radius: .3em;
+}
+#subject-btn:hover > #subject-entries {
+    display: block;
+    box-shadow: 0 0 1em var(--trans);
+}

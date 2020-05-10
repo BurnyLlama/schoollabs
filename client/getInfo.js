@@ -9,7 +9,7 @@ const getInfo = async (token) => {
     const user = await User.findOne({ _id: uid });
     const userInfo = {
         name: user.name,
-        inital: user.name.charAt(0),
+        initial: user.name.charAt(0),
         title: user.title,
         email: user.email,
         theme: user.theme,

@@ -41,6 +41,8 @@ app.get('/', (req, res) => {
 // Import and render sub-level pages
 const adminPages = require('./client/adminPages')
 app.use('/admin', adminPages)
+const hubPages = require('./client/hubPages')
+app.use('/hub', hubPages)
 
 /*
     The following 2 sections sets up the API calls.
