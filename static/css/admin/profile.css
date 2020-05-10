@@ -1,0 +1,10 @@
+main.profile {
+    display: grid;
+    grid-template-areas: 'user-info';
+    margin: 2em;
+}
+main.profile > div#user-info {
+    grid-area: user-info;
+    background: var(--mbg-clr);
+    padding: 1em
+}

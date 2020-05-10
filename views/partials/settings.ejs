@@ -1,0 +1,24 @@
+<div id="settings-container">
+    <h1>Inställningar</h1> 
+    <div class="cross" onclick="closeSettings()">
+        <svg width="514" height="513" viewBox="0 0 514 513" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="35.3553" y="0.297119" width="675" height="50" transform="rotate(45 35.3553 0.297119)" fill="black"/>
+            <rect x="0.355339" y="477.297" width="675" height="50" transform="rotate(-45 0.355339 477.297)" fill="black"/>
+        </svg>    
+    </div>
+    <form id="settings-content" method="POST" action="/api/user/changeSettings">
+        <div id="content">
+            <h2>Välj tema:</h2>
+            <input type="radio" name="theme" value="dark" id="dark">
+            <label for="dark">Mörkt</label>
+                <br>
+            <input type="radio" name="theme" value="light" id="light">
+            <label for="light">Ljust</label>
+        </div>
+        <div id="button-container">
+            <button id="cancel-btn" onclick="closeSettings()">Avbryt</button>
+            <input id="confirm-btn" type="submit" value="Spara">
+        </div>
+    </form>
+</div>
+<script src="/scripts/showSettings.js"></script>

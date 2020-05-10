@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/adminHead') %>
+    <link rel="stylesheet" type="text/css" href="/css/admin/home.css">
+    <title>Admin</title>
+</head>
+<body>
+    <%- include('../../partials/adminBar') %>
+    <main id="container" class="home">
+        <section id="quick-space">
+            <h1>Snabbisar</h1>
+            <div id="content">
+                <h2>Ändra Lösenord</h2>
+                <form method="POST" action="/api/admin/changePass">
+                    <input type="text" id="user" name="user" placeholder="Användarnamn">
+                    <input type="password" id="pass" name="pass" placeholder="Lösenord">
+                    <input type="submit" value="Byt Lösenord">
+                </form>
+                <h2>Skapa Användare</h2>
+                <form method="POST" action="/api/auth/register">
+                    <input type="text" id="name" name="name" placeholder="Användarnamn">
+                    <input type="password" id="pass" name="pass" placeholder="Lösenord">
+                    <input type="text" id="title" name="title" placeholder="Titel">
+                    <p>Titeln kan vara en av följande: student, guardian, teacher, admin</p>
+                    <input type="text" id="email" name="email" placeholder="epost@domän.se">
+                    <input type="submit" value="Skapa användare!">
+                </form>
+            </div>
+        </section>
+        <section id="news">
+            <h1>Nyheter!</h1>
+            <div id="content">
+                <h2>Skicka ut en Nyhet/Information!</h2>
+                <form method="POST" action="/api/news/create">
+                    <input type="text" id="title" name="title" placeholder="Rubrik">
+                    <textarea name="content" placeholder="Skriv nyheten/informationen här."></textarea>
+                    <input type="submit" value="Skicka ut!">
+                </form>
+            </div>
+        </section>
+        <section id="messages">
+            <h1>Meddelanden</h1>
+            <div id="content">
+
+            </div>
+        </section>
+    </main>
+    <%- include('../../partials/settings') %>
+    <script src="/scripts/loadVars.js"></script>
+</body>
+</html>

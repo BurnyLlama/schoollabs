@@ -1,0 +1,125 @@
+/* REMOVE PESKY MARGINS! */
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+/* Variables */
+:root {
+    --primary: #21DEFF;
+}
+
+body {
+    display: grid;
+    grid-template-areas:    'header' 
+                            'form';
+    grid-template-columns: auto;
+    grid-template-rows: 20vh 80vh;
+    height: 100vh;
+}
+
+/* So that text scales a little...*/
+@media screen and (max-width: 850px) {
+    body {
+        font-size: 10pt;
+    }
+}
+@media screen and (min-width: 1000px) {
+    body {
+        font-size: 11pt;
+    }
+}
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 12pt;
+    }
+}
+@media screen and (min-width: 1500px) {
+    body {
+        font-size: 13pt;
+    }
+}
+@media screen and (min-width: 1800px) {
+    body {
+        font-size: 14pt;
+    }
+}
+@media screen and (min-width: 2500px) {
+    body {
+        font-size: 15pt;
+    }
+}
+@media screen and (min-width: 3000) {
+    body {
+        font-size: 16pt;
+    }
+}
+/* Looks much... Ugh... */
+
+body > header {
+    text-align: center;
+    grid-area: header;
+    margin: auto;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+body > form {
+    grid-area: form;
+    margin: 0 auto;
+    padding: 2em 5%;
+    width: 30vw;
+    height: fit-content;
+    background: #111C;
+    border-radius: .3em;
+    display: grid;
+    grid-template-areas:    'avatar avatar'
+                            'user user'
+                            'pass pass'
+                            'login forgot';
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 35% 65%;
+}
+body > form > svg {
+    width: 100%; height: auto;
+    max-width: 12em;
+    margin: 1em auto;
+    grid-area: avatar;
+}
+body > form > svg#person > * {
+    fill: var(--primary);
+}
+body > form > input#user, body > form > input#pass {
+    padding: .75em;
+    margin: .5em 0;
+    border: none;
+    border-radius: .3em;
+    font-size: 1em;
+}
+body > form > input#user {
+    grid-area: user;
+}
+body > form > input#pass {
+    grid-area: pass;
+}
+body > form > button#login-btn {
+    border: none;
+    border-radius: .3em;
+    font-size: 1em;
+    padding: .75em;
+    margin: .5em 0;
+    background: var(--primary);
+    cursor: pointer;
+}
+body > form > a#forgot {
+    grid-area: forgot;
+    margin: auto 1em;
+    color: var(--primary);
+}
+body > form > p#cookies {
+    color: white;
+    background: #222C;
+    padding: .5em;
+    border-radius: .3em;
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+}

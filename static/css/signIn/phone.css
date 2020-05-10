@@ -1,0 +1,50 @@
+/* Phone optimizations */
+@media screen and (max-width: 800px) {
+body {
+    grid-template-columns: auto;
+    grid-template-rows: 25vh 75vh;
+    font-size: 14pt;
+}
+body > header {
+    grid-area: header;
+    margin: auto;
+    font-size: 2em;
+}
+body > form {
+    padding: .5em 5%;
+    margin: auto;
+    width: 90vw;
+    grid-template-areas:    '. .'   
+                            'avatar avatar'
+                            'user user'
+                            'pass pass'
+                            'forgot login';
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 50% 50%;
+}
+body > form > svg {
+    width: auto; height: 12em;
+    margin: .5em auto;
+}
+body > form > input#user, body > form > input#pass {
+    padding: .75em;
+    margin: .5em 0;
+    border: none;
+    border-radius: .3em;
+}
+body > form > button#login-btn {
+    padding: .75em;
+    margin: .5em 0;
+}
+body > form > a {
+    font-size: 1em;
+    margin: .5em 0;
+}
+body > form > p#cookies {
+    position: relative;
+    right: auto;
+    top: auto;
+    grid-column: 1 / 3;
+    margin: 1.5em 0 0 0;
+}
+}
