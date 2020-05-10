@@ -12,7 +12,7 @@ let settings;
     if (settings.bg_scheme.includes("#")) {
         document.querySelector("body").style.background = settings.bg_scheme;
     } else {
-        document.querySelector("body").style.background = `url(images/${settings.bg_scheme})`;
+        document.querySelector("body").style.background = `url(/images/${settings.bg_scheme})`;
     };
 
     // Set the accent color

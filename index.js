@@ -8,7 +8,7 @@ dotenv.config()
 
 // Express
 const express = require('express')
-let app = express()
+const app = express()
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 
@@ -36,6 +36,9 @@ app.use(express.static('static'))
 // Render top-level pages.
 app.get('/', (req, res) => {
     res.render('pages/signin')
+})
+app.get('/forgot_pass', (req, res) => {
+    res.render('pages/forgotPass')
 })
 
 // Import and render sub-level pages
