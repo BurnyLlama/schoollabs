@@ -14,6 +14,10 @@ const newsSchema = new mongoose.Schema({
     sender: {
         type: String,
         required: true
+    },
+    date: {
+        type: String,
+        required: false
     }//,
     //recievers: {
     //    type: Array,

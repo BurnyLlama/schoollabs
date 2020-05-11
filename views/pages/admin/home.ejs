@@ -37,6 +37,15 @@
                     <textarea name="content" placeholder="Skriv nyheten/informationen här."></textarea>
                     <input type="submit" value="Skicka ut!">
                 </form>
+                <% news.forEach(element => { %>
+                    <div class="<%= element._id %>">
+                        <h2><%= element.title %></h2>
+                        <p>
+                            <%= element.content %>
+                        </p>
+                        <i><%= element.sender %> -- <%= element.date %></i>
+                    </div>
+                <% }) %>
             </div>
         </section>
         <section id="messages">

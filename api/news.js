@@ -15,18 +15,21 @@ router.post('/create', async (req, res) => {
 
     // Check if the user who executes the command is a student, if so -> respond with access denied.
     const user = await User.findOne({ _id: uid });
-    if (user.title == "student") res.status(403).send('Du har inte behörighet!')
+    if (user.title == "student") return res.status(403).send('Du har inte behörighet!')
 
     const sender = await User.findOne({ _id: uid });
+    const date = new Date
+    const dateNow = `${date.getHours()}:${date.getMinutes()}  ${date.getDate()}/${date.getMonth() + 1} ${date.getFullYear()}`
 
     const news = new News({
         title: req.body.title,
         content: req.body.content,
-        sender: sender.name
+        sender: sender.name,
+        date: dateNow
     });
     try {
         const savedNews = await news.save();
-        res.send(savedNews);
+        res.redirect('back')
     } catch(err) {
         console.log(err);
         res.send('Ett fel uppstod när nyheten skulle sparas.')

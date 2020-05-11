@@ -6,3 +6,9 @@
     --fg-clr: #fff;
     --trans: #8884;
 }
+.cross {
+    filter: invert(1) hue-rotate(180deg);
+}
+#settings-button {
+    filter: invert(1);
+}

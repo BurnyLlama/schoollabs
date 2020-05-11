@@ -11,7 +11,15 @@
         <section id="news">
             <h1>Nyheter!</h1>
             <div id="content">
-
+                <% news.forEach(element => { %>
+                    <div class="<%= element._id %>">
+                        <h2><%= element.title %></h2>
+                        <p>
+                            <%= element.content %>
+                        </p>
+                        <i><%= element.sender %> -- <%= element.date %></i>
+                    </div>
+                <% }) %>
             </div>
         </section>
         <section id="important">
