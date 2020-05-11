@@ -40,6 +40,9 @@ app.get('/', (req, res) => {
 app.get('/forgot_pass', (req, res) => {
     res.render('pages/forgotPass')
 })
+app.get('/check_with_admin_if_need_help', (req, res) => {
+    res.render('pages/checkWithAdmin')
+})
 
 // Import and render sub-level pages
 const adminPages = require('./client/adminPages')

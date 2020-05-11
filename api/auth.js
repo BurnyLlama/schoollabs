@@ -88,18 +88,8 @@ router.post('/forgot', (req, res, next) => {
     console.log(`Inkommande förfrågan om att byta lösenord på ${user}.`);
 
     // Redirect the user and let them know you've gotten the request.
-    res.redirect('/forgot_pass/check.html');
+    res.redirect('/check_with_admin_if_need_help');
     res.end
-});
-
-// When the client checks if you should be at /hub
-router.get('/hub', (req, res, next) => {
-    if (req.session.loggedin) {
-        res.send(`{"msg" : "Välkommen ${req.session.user}"}`);
-    } else {
-        res.send('{"msg" : "Vänligen logga in!"}');
-    };
-    res.end();
 });
 
 module.exports = router;
