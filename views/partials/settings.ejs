@@ -9,10 +9,10 @@
     <form id="settings-content" method="POST" action="/api/user/changeSettings">
         <div id="content">
             <h2>Välj tema:</h2>
-            <input type="radio" name="theme" value="dark" id="dark">
+            <input type="radio" name="theme" value="dark" id="dark" <% if (userInfo.theme == "dark") { %> checked="true" <% } %>>
             <label for="dark">Mörkt</label>
                 <br>
-            <input type="radio" name="theme" value="light" id="light">
+            <input type="radio" name="theme" value="light" id="light" <% if (userInfo.theme == "light") { %> checked="true" <% } %>>
             <label for="light">Ljust</label>
         </div>
         <div id="button-container">

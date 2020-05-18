@@ -1,0 +1,26 @@
+section#news > div#content > div > h2 {
+    font-size: 1.25em;
+    margin: .5em .5em 0 .5em;
+    padding: .5em;
+    color: var(--bg-clr);
+    background: var(--primary);
+    border-top-left-radius: .3em;
+    border-top-right-radius: .3em;
+}
+section#news > div#content > div > p {
+    margin: 0 .625em 0 .625em;
+    padding: .5em;
+    background: var(--mbg-clr);
+    display: flex;
+    flex-wrap: wrap;
+}
+section#news > div#content > div > i {
+    margin: 0 .625em .625em .625em;
+    padding: .5em;
+    color: var(--mg-clr);
+    background: var(--mbg-clr);
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom-left-radius: .3em;
+    border-bottom-right-radius: .3em;
+}

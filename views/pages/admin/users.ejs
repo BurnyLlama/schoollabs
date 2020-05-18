@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/styleHead') %> 
+    <title>Användare</title>
+</head>
+<body class="admin-users-page">
+    <%- include('../../partials/adminBar') %> 
+    
+    <main id="container" class="users-section">
+        <h1>Vanliga operationer</h1>
+        <div>
+            <h2>Ändra Lösenord</h2>
+            <form method="POST" action="/api/admin/changePass" autocomplete="off">
+                <input type="text" id="user" name="user" placeholder="Användarnamn">
+                <input type="password" id="pass" name="pass" placeholder="Lösenord">
+                <input type="submit" value="Byt Lösenord">
+            </form>
+            <h2>Ändra användare</h2>
+            <form method="POST" action="/api/admin/changeUser" autocomplete="off">
+                <p>Skriv in det gamla användarnament på den användaren du vill ändra.</p>
+                <input type="text" id="user" name="user" placeholder="Användarnamn">
+                <p>Skriv in den nya information du vill ha:</p>
+                <input type="text" id="new-name" name="newName" placeholder="Användarnamn">
+                <input type="text" id="new-groups" name="newGroups" placeholder="Grupp">
+                <input type="text" id="etc" name="etc" placeholder="Etc.">
+                <p>Här skulle man kunna lägga in fler egenskaper.</p>
+                <input type="submit" value="Bekräfta!">
+            </form>
+        </div>
+
+        <div>
+            <h2>Skapa Användare</h2>
+            <form method="POST" action="/api/auth/register" autocomplete="off">
+                <input type="text" id="name" name="name" placeholder="Användarnamn">
+                <input type="password" id="pass" name="pass" placeholder="Lösenord">
+                <input type="text" id="title" name="title" placeholder="Titel">
+                <p>Titeln kan vara en av följande: student, guardian, teacher, admin</p>
+                <input type="text" id="email" name="email" placeholder="epost@domän.se">
+                <input type="submit" value="Skapa användare!">
+            </form>
+        </div>
+    </main>
+
+    <%- include('../../partials/settings') %>
+    <script src="/scripts/loadVars.js"></script>
+</body>
+</html>

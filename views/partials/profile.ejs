@@ -1,37 +1,50 @@
 <div id="user-info">
-    <h1>Din information: </h1>
-    <table>
-        <tr>
-            <td>
-                Användarnamn
-            </td>
-            <td>
-                <%= userInfo.name %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Epost
-            </td>
-            <td>
-                <%= userInfo.email %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Tema
-            </td>
-            <td>
-                <%= userInfo.theme %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Titel
-            </td>
-            <td>
-                <%= userInfo.title %>
-            </td>
-        </tr>
-    </table>
+    <div>
+        <h1>Din information: </h1>
+        <table>
+            <tr>
+                <td>
+                    Användarnamn
+                </td>
+                <td>
+                    <%= userInfo.name %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Epost
+                </td>
+                <td>
+                    <%= userInfo.email %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tema
+                </td>
+                <td>
+                    <%= userInfo.theme %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Titel
+                </td>
+                <td>
+                    <%= userInfo.title %>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h1>Byt lösenord</h1>
+        <form action="/api/user/changePass" method="post" id="change-pass-form">
+            <input type="password" name="oldPass" id="old-pass" placeholder="Gammalt lösenord"  oninput="changePassChecker()">
+            <input type="password" name="newPass" id="new-pass" placeholder="Nytt lösenord"  oninput="changePassChecker()">
+            <input type="password" name="passRepeat" id="rep-pass" placeholder="Upprepa nytt lösenord"  oninput="changePassChecker()">
+            <p id="status">Alla luckor måste fyllas i!</p>
+            <input type="submit" value="Byt lösenord!" disabled="true">
+        </form>
+    </div>
 </div>
+<script src="/scripts/changePass.js"></script>

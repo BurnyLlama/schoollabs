@@ -1,16 +1,16 @@
 /* Phone optimizations */
 @media screen and (max-width: 800px) {
-body {
+body.sign-in-page  {
     grid-template-columns: auto;
     grid-template-rows: 25vh 75vh;
     font-size: 14pt;
 }
-body > header {
+body.sign-in-page  > header {
     grid-area: header;
     margin: auto;
     font-size: 2em;
 }
-body > form {
+body.sign-in-page  > form {
     padding: .5em 5%;
     margin: auto;
     width: 90vw;
@@ -22,25 +22,25 @@ body > form {
     grid-template-rows: auto auto auto auto;
     grid-template-columns: 50% 50%;
 }
-body > form > svg {
+body.sign-in-page  > form > svg {
     width: auto; height: 12em;
     margin: .5em auto;
 }
-body > form > input#user, body > form > input#pass {
+body.sign-in-page  > form > input#user, body > form > input#pass {
     padding: .75em;
     margin: .5em 0;
     border: none;
     border-radius: .3em;
 }
-body > form > button#login-btn {
+body.sign-in-page  > form > button#login-btn {
     padding: .75em;
     margin: .5em 0;
 }
-body > form > a {
+body.sign-in-page  > form > a {
     font-size: 1em;
     margin: .5em 0;
 }
-body > form > p#cookies {
+body.sign-in-page  > form > p#cookies {
     position: relative;
     right: auto;
     top: auto;

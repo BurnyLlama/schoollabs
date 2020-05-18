@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../../partials/adminHead') %>
-    <link rel="stylesheet" type="text/css" href="/css/admin/home.css">
+    <%- include('../../partials/styleHead') %>
     <title>Admin</title>
 </head>
 <body>
@@ -12,13 +11,13 @@
             <h1>Snabbisar</h1>
             <div id="content">
                 <h2>Ändra Lösenord</h2>
-                <form method="POST" action="/api/admin/changePass">
+                <form method="POST" action="/api/admin/changePass" autocomplete="off">
                     <input type="text" id="user" name="user" placeholder="Användarnamn">
                     <input type="password" id="pass" name="pass" placeholder="Lösenord">
                     <input type="submit" value="Byt Lösenord">
                 </form>
                 <h2>Skapa Användare</h2>
-                <form method="POST" action="/api/auth/register">
+                <form method="POST" action="/api/auth/register" autocomplete="off">
                     <input type="text" id="name" name="name" placeholder="Användarnamn">
                     <input type="password" id="pass" name="pass" placeholder="Lösenord">
                     <input type="text" id="title" name="title" placeholder="Titel">
@@ -33,12 +32,12 @@
             <div id="content">
                 <h2>Skicka ut en Nyhet/Information!</h2>
                 <form method="POST" action="/api/news/create">
-                    <input type="text" id="title" name="title" placeholder="Rubrik">
+                    <input type="text" id="title" name="title" autocomplete="off" placeholder="Rubrik">
                     <textarea name="content" placeholder="Skriv nyheten/informationen här."></textarea>
                     <input type="submit" value="Skicka ut!">
                 </form>
                 <% news.forEach(element => { %>
-                    <div class="<%= element._id %>">
+                    <div id="<%= element._id %>">
                         <h2><%= element.title %></h2>
                         <p>
                             <%= element.content %>

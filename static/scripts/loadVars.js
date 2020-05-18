@@ -7,9 +7,9 @@ let user;
     console.log('Fetched settings.json!', settings);
 
     const avatarBg = document.querySelector('#avatar-bg').style;
-    const red = Math.floor(Math.random() * 255);
-    const green = Math.floor(Math.random() * 255);
-    const blue = Math.floor(Math.random() * 255);
+    const red = Math.floor((Math.random() + 0.1 ) * 255);
+    const green = Math.floor((Math.random() + 0.1 ) * 255);
+    const blue = Math.floor((Math.random() + 0.1 ) * 255);
     const avatarBgColor = `rgb(${red}, ${green}, ${blue})`;
     avatarBg.background = avatarBgColor;
     

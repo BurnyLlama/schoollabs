@@ -1,0 +1,33 @@
+body.admin-users-page > main#container {
+    background: var(--mbg-clr);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top-right-radius: .3em;
+    margin: 1em 2em;
+}
+body.admin-users-page > main#container > h1 {
+    grid-column: span 2;
+    text-align: center;
+    margin: .5em;
+}
+body.admin-users-page > main#container > div {
+    background: var(--bg-clr);
+    border-radius: .3em;
+    margin: 1em;
+}
+body.admin-users-page > main#container > div > h2 {
+    font-size: 1.25em;
+    margin: .5em .5em 0 .5em;
+    padding: .5em;
+    color: var(--bg-clr);
+    background: var(--primary);
+    border-top-left-radius: .3em;
+    border-top-right-radius: .3em;
+}
+body.admin-users-page > main#container > div > *:nth-child(2) {
+    margin: 0 .625em .625em .625em;
+    padding: .5em;
+    background: var(--mbg-clr);
+    display: flex;
+    flex-wrap: wrap;
+}

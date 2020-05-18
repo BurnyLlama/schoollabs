@@ -1,73 +1,11 @@
-@font-face {
-    src: url('/fonts/Lato-Regular.ttf');
-    font-family: 'Lato';
-}
-/* REMOVE PESKY MARGINS! */
-* {
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', 'Noto Sans', 'Helvetica', 'sans', 'sans-serif';
-}
-/* Variables */
-:root {
-    --primary: #21DEFF;
-}
-
-body {
-    display: grid;
-    grid-template-areas:    'header' 
-                            'form';
-    grid-template-columns: auto;
-    height: 100vh;
-    background: var(--primary);
-}
-/* So that text scales a little...*/
-@media screen and (min-width: 801px) {
-    body {
-        font-size: 10pt;
-    }
-}
-@media screen and (min-width: 1000px) {
-    body {
-        font-size: 11pt;
-    }
-}
-@media screen and (min-width: 1200px) {
-    body {
-        font-size: 12pt;
-    }
-}
-@media screen and (min-width: 1500px) {
-    body {
-        font-size: 13pt;
-    }
-}
-@media screen and (min-width: 1800px) {
-    body {
-        font-size: 14pt;
-    }
-}
-@media screen and (min-width: 2500px) {
-    body {
-        font-size: 15pt;
-    }
-}
-@media screen and (min-width: 3000) {
-    body {
-        font-size: 16pt;
-    }
-}
-/* Looks much... Ugh... */
-
-
-body > header {
+body.forgot-pass > header {
     text-align: center;
     grid-area: header;
     margin: auto;
     font-size: 2.5em;
     font-weight: bold;
 }
-body > form {
+body.forgot-pass > form {
     grid-area: form;
     margin: 0 auto;
     padding: 2em 5%;
@@ -82,12 +20,12 @@ body > form {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
 }
-body > form > p {
+body.forgot-pass > form > p {
     font-size: 1em;
     color: white;
     margin: 1em;
 }
-body > form > input#user {
+body.forgot-pass > form > input#user {
     grid-area: user;
     padding: .75em;
     margin: .5em 0;
@@ -96,7 +34,7 @@ body > form > input#user {
     font-size: 1em;
     width: 100%;
 }
-body > form > input[type=submit] {
+body.forgot-pass > form > input[type=submit] {
     border: none;
     border-radius: .3em;
     font-size: 1em;
@@ -106,7 +44,7 @@ body > form > input[type=submit] {
     grid-area: send;
     cursor: pointer;
 }
-body > div.check {
+body.forgot-pass > div.check {
     position: absolute;
     width: 30vw;
     left: 35vw;
@@ -116,6 +54,6 @@ body > div.check {
     padding: 2em;
     margin-top: 40vh;
 }
-body > div.check > p {
+body.forgot-pass > div.check > p {
     font-size: 1em;
 }

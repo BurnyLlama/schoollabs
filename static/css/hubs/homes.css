@@ -1,0 +1,46 @@
+main.home {
+    display: grid;
+    grid-template-areas: 'sect1 sect2 sect3';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+main.home > section {
+    background: var(--mbg-clr);
+    border-radius: .3em; 
+    padding: 1em; 
+    display: grid;
+    grid-template-areas: 'heading' 'content';
+    grid-template-rows: auto 1fr;
+}
+main.home > section:nth-child(1) {
+    grid-area: sect1;
+    margin: 1em 1em 1em 2em;
+}
+main.home > section:nth-child(2) {
+    grid-area: sect2;
+    margin: 1em 1em 1em 1em;
+}
+main.home > section:nth-child(3) {
+    grid-area: sect3;
+    margin: 1em 2em 1em 1em;
+}
+main.home > section > h1 {
+    margin: 0 0 .5em 1em;
+    font-size: 1.5em;
+    grid-area: heading;
+}
+
+main.home > section > div#content {
+    border-radius: .3em;
+    background: var(--bg-clr);
+}
+main.home > section > div#content > h2 {
+    font-size: 1.25em;
+    margin: .5em .5em 0 .5em;
+    padding: .5em;
+    color: var(--bg-clr);
+    background: var(--primary);
+    border-top-left-radius: .3em;
+    border-top-right-radius: .3em;
+}

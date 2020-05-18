@@ -1,68 +1,20 @@
-/* REMOVE PESKY MARGINS! */
-* {
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-}
-/* Variables */
-:root {
-    --primary: #21DEFF;
-}
-
-body {
+body.sign-in-page {
     display: grid;
-    grid-template-areas:    'header' 
-                            'form';
-    grid-template-columns: auto;
-    grid-template-rows: 20vh 80vh;
-    height: 100vh;
+    grid-template-areas: 'header'
+                         'form';
+    grid-template-rows: 25% 75%;
+    grid-template-columns: 100%;
+    height: 100%;
+    width: auto;
 }
-
-/* So that text scales a little...*/
-@media screen and (max-width: 850px) {
-    body {
-        font-size: 10pt;
-    }
-}
-@media screen and (min-width: 1000px) {
-    body {
-        font-size: 11pt;
-    }
-}
-@media screen and (min-width: 1200px) {
-    body {
-        font-size: 12pt;
-    }
-}
-@media screen and (min-width: 1500px) {
-    body {
-        font-size: 13pt;
-    }
-}
-@media screen and (min-width: 1800px) {
-    body {
-        font-size: 14pt;
-    }
-}
-@media screen and (min-width: 2500px) {
-    body {
-        font-size: 15pt;
-    }
-}
-@media screen and (min-width: 3000) {
-    body {
-        font-size: 16pt;
-    }
-}
-/* Looks much... Ugh... */
-
-body > header {
+body.sign-in-page > header {
     text-align: center;
     grid-area: header;
     margin: auto;
     font-size: 2.5em;
     font-weight: bold;
 }
-body > form {
+body.sign-in-page  > form {
     grid-area: form;
     margin: 0 auto;
     padding: 2em 5%;
@@ -78,29 +30,42 @@ body > form {
     grid-template-rows: auto auto auto auto;
     grid-template-columns: 35% 65%;
 }
-body > form > svg {
+body.sign-in-page  > form > svg {
     width: 100%; height: auto;
     max-width: 12em;
     margin: 1em auto;
     grid-area: avatar;
 }
-body > form > svg#person > * {
+body.sign-in-page  > form > svg#person > * {
     fill: var(--primary);
 }
-body > form > input#user, body > form > input#pass {
+body.sign-in-page > form > input#user, body.sign-in-page > form > input#pass {
+    background: var(--mbg-clr);
     padding: .75em;
     margin: .5em 0;
     border: none;
     border-radius: .3em;
     font-size: 1em;
 }
-body > form > input#user {
+body.sign-in-page > form > input#user:hover, body > form > input#pass:hover {
+    background: var(--bg-clr);
+    border: .1em solid var(--primary);
+    padding: .65em;
+    transition: .3s;
+}
+body.sign-in-page > form > input#user:focus, body > form > input#pass:focus{
+    background: var(--bg-clr);
+    border: .2em solid var(--primary);
+    padding: .55em;
+    transition: .3s;
+}
+body.sign-in-page  > form > input#user {
     grid-area: user;
 }
-body > form > input#pass {
+body.sign-in-page  > form > input#pass {
     grid-area: pass;
 }
-body > form > button#login-btn {
+body.sign-in-page  > form > button#login-btn {
     border: none;
     border-radius: .3em;
     font-size: 1em;
@@ -108,13 +73,18 @@ body > form > button#login-btn {
     margin: .5em 0;
     background: var(--primary);
     cursor: pointer;
+    transition: .3s;
 }
-body > form > a#forgot {
+body.sign-in-page  > form > button#login-btn:hover {
+    border-radius: .5em;
+    filter: brightness(1.1);
+}
+body.sign-in-page  > form > a#forgot {
     grid-area: forgot;
     margin: auto 1em;
     color: var(--primary);
 }
-body > form > p#cookies {
+body.sign-in-page  > form > p#cookies {
     color: white;
     background: #222C;
     padding: .5em;

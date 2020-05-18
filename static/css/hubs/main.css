@@ -1,70 +1,30 @@
-@font-face {
-    src: url('/fonts/Lato-Regular.ttf');
-    font-family: 'Lato';
+/* Import other files */
+@import 'homes.css';
+@import 'profile.css';
+@import 'forms.css';
+@import 'news.css';
+@import 'subject.css';
+@import 'users.css';
+@import 'schedules.css';
+
+/* Global in this scope */
+/* Cross */
+.cross {
+    grid-area: cross;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', 'sans', 'sans-serif';
+.cross > svg {
+    width: 2.5em; height: 2.5em;
+    margin: 0 0 .5em .5em;
+    cursor: pointer;
 }
-:root {
-    --bg-clr: #fff;
-    --mbg-clr: #eee;
-    --mg-clr: #888;
-    --mfg-clr: #111;
-    --fg-clr: #000;
-    --primary: #21DEFF;
-    --trans: #1112;
+.cross > svg > * {
+    transition: .3s;
 }
-body {
-    background: var(--bg-clr);
-    color: var(--fg-clr);
-    display: grid;
-    grid-template-areas: 'menu' 
-                         'main';
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr;
-    width: 100%;
-    height: 100vh;
-    font-size: 14pt;
+.cross > svg:hover > * {
+    fill: #ff4b4b;
+    transition: .3s;
 }
-/* So that text scales a little...*/
-@media screen and (max-width: 850px) {
-    body {
-        font-size: 10pt;
-    }
-}
-@media screen and (min-width: 1000px) {
-    body {
-        font-size: 11pt;
-    }
-}
-@media screen and (min-width: 1200px) {
-    body {
-        font-size: 12pt;
-    }
-}
-@media screen and (min-width: 1500px) {
-    body {
-        font-size: 13pt;
-    }
-}
-@media screen and (min-width: 1800px) {
-    body {
-        font-size: 14pt;
-    }
-}
-@media screen and (min-width: 2500px) {
-    body {
-        font-size: 15pt;
-    }
-}
-@media screen and (min-width: 3000) {
-    body {
-        font-size: 16pt;
-    }
-}
+/* Menubar */
 body > nav#menubar {
     grid-area: menu;
     display: grid;
@@ -134,9 +94,13 @@ nav#menubar > div#settings > #settings-button:hover {
     transition: 1s ease-in-out;
     cursor: pointer;
 }
+
+/* Main-area with class container should take up the 'main'-area in grid. */
 body > main#container {
     grid-area: main;
 }
+
+/* Settings */
 body > div#settings-container {
     display: none;
     position: absolute;
@@ -149,6 +113,7 @@ body > div#settings-container {
     grid-template-columns: 1fr 3em;
     grid-template-rows: 3em 1fr;
     border-radius: .3em;
+    box-shadow: 0 0 1em var(--trans);
 }
 #settings-container > h1 {
     grid-area: heading;

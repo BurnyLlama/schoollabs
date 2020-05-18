@@ -1,0 +1,85 @@
+#schedule-container {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--mbg-clr);
+    justify-content: space-evenly;
+    border-radius: .3em;
+    margin: 1em;
+}
+#schedule-container > h1 {
+    width: 100%;
+    text-align: center;
+    margin: .5em;
+}
+#schedule-container > div.day {
+    min-width: 16%;
+    max-width: 18%;
+    display: grid;
+    grid-template-areas: 'name' 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i';
+    grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: var(--bg-clr);
+    padding: .5em;
+    margin: 1em 0;
+    border-radius: .3em;
+}
+div.day > h2 {
+    grid-row: name;
+    margin: .3em 1em;
+    color: var(--fg-clr);
+}
+div.day > div {
+    color: black;
+    background: var(--mg-clr);
+    display: grid;
+    grid-template-areas: 'subject time'
+                         'teacher loc';
+    grid-template-columns: 2fr 1fr;
+    grid-row: 1fr 1fr;
+    border-radius: .3em;
+    margin: .1em 0;
+}
+div.day > div > * {
+    margin: auto;
+    padding: .3em;
+}
+div.day > div > h2 {
+    grid-area: subject;
+}
+div.day > div > p {
+    grid-area: teacher;
+}
+div.day > div > i#time {
+    grid-area: time;
+}
+div.day > div > i#location {
+    grid-area: loc;
+}
+
+
+div.hr-8 {
+    grid-row: a;
+}
+div.hr-9 {
+    grid-row: b;
+}
+div.hr-10 {
+    grid-row: c;
+}
+div.hr-11 {
+    grid-row: d;
+}
+div.hr-12 {
+    grid-row: e;
+}
+div.hr-13 {
+    grid-row: f;
+}
+div.hr-14 {
+    grid-row: g;
+}
+div.hr-15 {
+    grid-row: h;
+}
+div.hr-16 {
+    grid-row: i;
+}

@@ -1,0 +1,81 @@
+form {
+    margin: 0 .625em .625em .625em;
+    padding: .5em;
+    background: var(--mbg-clr);
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom-left-radius: .3em;
+    border-bottom-right-radius: .3em;
+}
+form > input, form > textarea {
+    margin: .5em;
+    padding: .5em 1em;
+    color: var(--fg-clr);
+    background: var(--bg-clr);
+    border: none;
+    border-radius: .3em;
+    width: 100%;
+    font-size: 1em;
+    transition: 0s;
+    resize: vertical;
+    outline: none;
+}
+form > input:hover, form > textarea:hover {
+    background: var(--mbg-clr);
+    border: .05em solid var(--primary);
+    padding: .45em .95em;
+    transition: .3s;
+}
+form > input:focus, form > textarea:focus {
+    background: var(--mbg-clr);
+    border: .05em solid var(--primary);
+    border: .15em solid var(--primary);
+    padding: .35em .85em;
+    transition: .2s;
+}
+form > textarea {
+    height: 6em;
+}
+form > input::placeholder {
+    color: var(--mg-clr);
+}
+form > input[type=submit] {
+    margin: .5em;
+    color: var(--bg-clr);
+    background: var(--primary);
+    border: none;
+}
+form > input[type=submit]:hover {
+    margin: .5em;
+    padding: .5em 1em;
+}
+form > input[type=submit]:hover {
+    border-radius: .3em;
+    filter: brightness(1.2);
+    border-radius: .5em;
+    transition: .3s;
+    cursor: pointer;
+}
+form > input:disabled {
+    margin: .5em;
+    color: var(--bg-clr);
+    background: var(--mg-clr);
+    border: none;
+}
+form > p {
+    margin: .5em;
+}
+form > p#status {
+    margin: .5em 2em;
+    padding: .5em;
+    border-left: .3em solid var(--primary);
+    background: var(--bg-clr);
+    border-radius: .3em;
+}
+form > p#status::before {
+    content: "!";
+    position: relative;
+    left: -1.5em;
+    font-weight: bold;
+    color: var(--primary);
+}

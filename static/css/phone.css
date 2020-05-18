@@ -1,0 +1,5 @@
+/* Import phone-rlated sheets */
+@import 'signIn/phone.css';
+@import 'forgotPass/phone.css';
+
+/* Create here global styles */

@@ -12,5 +12,13 @@ router.get('/profile', async (req, res) => {
     const userInfo = await getInfo(req.cookies.token)
     res.render('pages/admin/profile', {userInfo: userInfo})
 })
+router.get('/users', async (req, res) => {
+    const userInfo = await getInfo(req.cookies.token)
+    res.render('pages/admin/users', {userInfo: userInfo})
+})
+router.get('/schedules', async (req, res) => {
+    const userInfo = await getInfo(req.cookies.token)
+    res.render('pages/admin/schedules', {userInfo: userInfo})
+})
 
 module.exports = router

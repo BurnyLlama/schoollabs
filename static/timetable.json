@@ -1,0 +1,174 @@
+{
+    "name": "Klass 9",
+    "days": [
+        {
+            "name": "Måndag",
+            "lessons": [
+                {
+                    "subject": "Matte",
+                    "hour": 8,
+                    "teacher": "Pelle Svanslös",
+                    "location": "Blå salen",
+                    "color": "#fe8996"
+                },
+                {
+                    "subject": "Svenska",
+                    "hour": 11,
+                    "teacher": "Findus",
+                    "location": "Is-hallen",
+                    "color": "#89ef96"
+                },
+                {
+                    "subject": "Lunch",
+                    "hour": 15,
+                    "teacher": "Ingen lärare",
+                    "location": "Matsalen (duh?)",
+                    "color": "#8996ff"
+                },
+                {
+                    "subject": "Engelska",
+                    "hour": 13,
+                    "teacher": "Winnie the Pooh",
+                    "location": "Big Ben",
+                    "color": "#de96ff"
+                }
+            ]
+        },
+        {
+            "name": "Tisdag",
+            "lessons": [
+                {
+                    "subject": "Matte",
+                    "hour": 8,
+                    "teacher": "Pelle Svanslös",
+                    "location": "Blå salen",
+                    "color": "#fe8996"
+                },
+                {
+                    "subject": "Svenska",
+                    "hour": 10,
+                    "teacher": "Findus",
+                    "location": "Is-hallen",
+                    "color": "#89ef96"
+                },
+                {
+                    "subject": "Lunch",
+                    "hour": 12,
+                    "teacher": "Ingen lärare",
+                    "location": "Matsalen (duh?)",
+                    "color": "#8996ff"
+                },
+                {
+                    "subject": "Engelska",
+                    "hour": 13,
+                    "teacher": "Winnie the Pooh",
+                    "location": "Big Ben",
+                    "color": "#de96ff"
+                }
+            ]
+        },
+        {
+            "name": "Onsdag",
+            "lessons": [
+                {
+                    "subject": "Matte",
+                    "hour": 8,
+                    "teacher": "Pelle Svanslös",
+                    "location": "Blå salen",
+                    "color": "#fe8996"
+                },
+                {
+                    "subject": "Svenska",
+                    "hour": 10,
+                    "teacher": "Findus",
+                    "location": "Is-hallen",
+                    "color": "#89ef96"
+                },
+                {
+                    "subject": "Lunch",
+                    "hour": 12,
+                    "teacher": "Ingen lärare",
+                    "location": "Matsalen (duh?)",
+                    "color": "#8996ff"
+                },
+                {
+                    "subject": "Engelska",
+                    "hour": 13,
+                    "teacher": "Winnie the Pooh",
+                    "location": "Big Ben",
+                    "color": "#de96ff"
+                }
+            ]
+        },
+        {
+            "name": "Torsdag",
+            "lessons": [
+                {
+                    "subject": "Matte",
+                    "hour": 8,
+                    "length": 1,
+                    "teacher": "Pelle Svanslös",
+                    "location": "Blå salen",
+                    "color": "#fe8996"
+                },
+                {
+                    "subject": "Svenska",
+                    "hour": 10,
+                    "length": 2,
+                    "teacher": "Findus",
+                    "location": "Is-hallen",
+                    "color": "#89ef96"
+                },
+                {
+                    "subject": "Lunch",
+                    "hour": 12,
+                    "length": 1,
+                    "teacher": "Ingen lärare",
+                    "location": "Matsalen (duh?)",
+                    "color": "#8996ff"
+                },
+                {
+                    "subject": "Engelska",
+                    "hour": 13,
+                    "length": 1,
+                    "teacher": "Winnie the Pooh",
+                    "location": "Big Ben",
+                    "color": "#de96ff"
+                }
+            ]
+        },
+        {
+            "name": "Fredag",
+            "lessons": [
+                {
+                    "subject": "Matte",
+                    "hour": 8,
+                    "teacher": "Pelle Svanslös",
+                    "location": "Blå salen",
+                    "color": "#fe8996"
+                },
+                {
+                    "subject": "Svenska",
+                    "hour": 10,
+                    "teacher": "Findus",
+                    "location": "Is-hallen",
+                    "color": "#89ef96"
+                },
+                {
+                    "subject": "Lunch",
+                    "hour": 12,
+                    "teacher": "Ingen lärare",
+                    "location": "Matsalen (duh?)",
+                    "color": "#8996ff"
+                },
+                {
+                    "subject": "Engelska",
+                    "hour": 13,
+                    "teacher": "Winnie the Pooh",
+                    "location": "Big Ben",
+                    "color": "#de96ff"
+                }
+            ]
+        }
+    ]
+}
