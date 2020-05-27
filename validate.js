@@ -1,5 +1,5 @@
 // Validate
-const Joi = require('@hapi/joi');
+const Joi = require('@hapi/joi')
 
 const login = (data) => {
     const schema = Joi.object({
@@ -9,9 +9,9 @@ const login = (data) => {
         pass: Joi.string()
             .min(1)
             .required()
-    });
-    return schema.validate(data);
-};
+    })
+    return schema.validate(data)
+}
 
 const register = (data) => {
     const schema = Joi.object({
@@ -28,9 +28,9 @@ const register = (data) => {
             .alphanum()
             .min(2)
             .required()
-    });
-    return schema.validate(data);
-};
+    })
+    return schema.validate(data)
+}
 
 const changePassAdmin = (data) => {
     const schema = Joi.object({
@@ -40,9 +40,9 @@ const changePassAdmin = (data) => {
         pass: Joi.string()
             .min(1)
             .required()
-    });
+    })
     return schema.validate(data)
-};
+}
 
 const news = (data) => {
     const schema = Joi.object({
@@ -57,11 +57,34 @@ const news = (data) => {
             .optional()//,
         //recievers: Joi.string()
         //    .optional()
-    });
-    return schema.validate(data);
-};
+    })
+    return schema.validate(data)
+}
 
-module.exports.login = login;
-module.exports.register = register;
-module.exports.changePassAdmin = changePassAdmin;
-module.exports.news = news;
+const subject = (data) => {
+    const schema = Joi.object({
+        name: Joi.string()
+            .required(),
+        teacher: Joi.string()
+            .required(),
+        room: Joi.string()
+            .required()
+    })
+    return schema.validate(data)
+}
+const schedule = (data) => {
+    const schema = Joi.object({
+        name: Joi.string()
+            .required(),
+        days: Joi.array()
+            .required()
+    })
+    return schema.validate(data)
+}
+
+module.exports.login = login
+module.exports.register = register
+module.exports.changePassAdmin = changePassAdmin
+module.exports.news = news
+module.exports.subject = subject
+module.exports.schedule = schedule
